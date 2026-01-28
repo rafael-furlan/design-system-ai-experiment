@@ -1,0 +1,191 @@
+/* 
+ * CSS Variables are injected from design tokens via Button.tsx
+ * These variables reference system color tokens:
+ * - --button-primary-* uses systemColors.surface and systemColors.typography
+ * - --button-secondary-* uses systemColors.surface and systemColors.typography
+ * - --button-tertiary-* uses systemColors.typography
+ * - --button-focus-color uses systemColors.border.focus
+ */
+
+/* Button Base Styles */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: inherit;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--button-focus-color);
+  outline-offset: 2px;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+}
+
+/* Button Sizes */
+.button--small {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  min-height: 2rem;
+}
+
+.button--medium {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  min-height: 2.5rem;
+}
+
+.button--large {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  min-height: 3rem;
+}
+
+/* Icon-only buttons (circular) */
+.button--icon-only {
+  border-radius: 50%;
+  padding: 0;
+  aspect-ratio: 1;
+}
+
+.button--icon-only.button--small {
+  width: 2rem;
+  height: 2rem;
+  min-height: 2rem;
+}
+
+.button--icon-only.button--medium {
+  width: 2.5rem;
+  height: 2.5rem;
+  min-height: 2.5rem;
+}
+
+.button--icon-only.button--large {
+  width: 3rem;
+  height: 3rem;
+  min-height: 3rem;
+}
+
+/* Primary Variant - Solid Dark Background */
+.button--primary {
+  background-color: var(--button-primary-bg);
+  color: var(--button-primary-text);
+  border-radius: 0.5rem;
+}
+
+.button--primary:hover:not(:disabled) {
+  background-color: var(--button-primary-hover-bg);
+}
+
+.button--primary:active:not(:disabled) {
+  background-color: var(--button-primary-active-bg);
+}
+
+.button--primary.button--disabled,
+.button--primary:disabled {
+  background-color: var(--button-primary-disabled-bg);
+  color: var(--button-primary-disabled-text);
+}
+
+.button--primary.button--focused {
+  outline: 2px solid var(--button-focus-color);
+  outline-offset: 2px;
+}
+
+/* Secondary Variant - Outlined or Light Fill */
+.button--secondary {
+  background-color: var(--button-secondary-bg);
+  color: var(--button-secondary-text);
+  border: 1px solid var(--button-secondary-border);
+  border-radius: 0.5rem;
+}
+
+.button--secondary:hover:not(:disabled) {
+  background-color: var(--button-secondary-hover-bg);
+}
+
+.button--secondary:active:not(:disabled) {
+  background-color: var(--button-secondary-active-bg);
+}
+
+.button--secondary.button--disabled,
+.button--secondary:disabled {
+  background-color: var(--button-secondary-disabled-bg);
+  color: var(--button-secondary-disabled-text);
+  border-color: var(--button-secondary-disabled-border);
+}
+
+.button--secondary.button--focused {
+  border-color: var(--button-focus-color);
+  border-width: 2px;
+  color: var(--button-focus-color);
+}
+
+/* Tertiary Variant - Ghost/Text-only */
+.button--tertiary {
+  background-color: transparent;
+  color: var(--button-tertiary-text);
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.button--tertiary:hover:not(:disabled) {
+  background-color: var(--button-tertiary-hover-bg);
+}
+
+.button--tertiary:active:not(:disabled) {
+  background-color: var(--button-tertiary-active-bg);
+}
+
+.button--tertiary.button--disabled,
+.button--tertiary:disabled {
+  color: var(--button-tertiary-disabled-text);
+}
+
+.button--tertiary.button--focused {
+  outline: 2px solid var(--button-focus-color);
+  outline-offset: 2px;
+}
+
+/* Loading State */
+.button__spinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button__spinner svg {
+  animation: spin 1.4s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Icon and Text */
+.button__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button__text {
+  display: inline-block;
+}

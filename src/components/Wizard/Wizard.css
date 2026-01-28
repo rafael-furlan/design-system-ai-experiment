@@ -1,0 +1,30 @@
+/* 
+ * CSS Variables are injected from design tokens via MultiRecipientSelector.tsx
+ * These variables reference system color and spacing tokens
+ */
+
+/* MultiRecipientSelector Base Styles */
+.multi-recipient-selector {
+  display: flex;
+  align-items: center;
+  gap: var(--multi-recipient-gap);
+  flex-wrap: wrap;
+}
+
+.multi-recipient-selector__separator {
+  color: var(--multi-recipient-separator-color);
+  flex-shrink: 0;
+  margin: 0 calc(var(--multi-recipient-gap) / 2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .multi-recipient-selector {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .multi-recipient-selector__separator {
+    display: none;
+  }
+}

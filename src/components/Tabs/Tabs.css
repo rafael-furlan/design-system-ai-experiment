@@ -1,0 +1,83 @@
+/* 
+ * CSS Variables are injected from design tokens via Tabs.tsx
+ * These variables reference system color, spacing, and typography tokens
+ */
+
+/* Tabs Base Styles */
+.tabs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Tabs Header */
+.tabs__header {
+  display: flex;
+  gap: var(--tabs-spacing-sm);
+  border-bottom: 1px solid var(--tabs-border);
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.tabs__header::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.tabs__tab {
+  padding: var(--tabs-spacing-md) var(--tabs-spacing-lg);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-family: var(--tabs-font-family);
+  font-size: var(--tabs-font-size);
+  font-weight: var(--tabs-font-weight);
+  color: var(--tabs-text-muted);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  position: relative;
+  outline: none;
+}
+
+.tabs__tab:hover {
+  color: var(--tabs-text);
+  background-color: var(--tabs-hover-bg);
+}
+
+.tabs__tab:focus-visible {
+  outline: 2px solid var(--tabs-active-border);
+  outline-offset: -2px;
+}
+
+.tabs__tab--active {
+  color: var(--tabs-active-text);
+  border-bottom-color: var(--tabs-active-border);
+  font-weight: 600;
+}
+
+.tabs__tab--active:hover {
+  background-color: var(--tabs-active-bg);
+}
+
+/* Tabs Content */
+.tabs__content {
+  padding: var(--tabs-spacing-lg);
+  min-height: 200px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tabs__header {
+    gap: 0;
+  }
+
+  .tabs__tab {
+    padding: var(--tabs-spacing-sm) var(--tabs-spacing-md);
+    font-size: 0.875rem;
+  }
+
+  .tabs__content {
+    padding: var(--tabs-spacing-md);
+  }
+}

@@ -7,7 +7,10 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "dev": "tsc --watch"
+    "dev": "vite",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "keywords": [
     "design-tokens",
@@ -16,7 +19,25 @@
   ],
   "author": "",
   "license": "MIT",
+  "dependencies": {
+    "bootstrap-icons": "^1.13.1",
+    "react": "^18.2.0",
+    "react-bootstrap-icons": "^1.11.6",
+    "react-dom": "^18.2.0"
+  },
   "devDependencies": {
-    "typescript": "^5.0.0"
+    "@storybook/addon-essentials": "^7.6.0",
+    "@storybook/addon-interactions": "^7.6.0",
+    "@storybook/addon-links": "^7.6.0",
+    "@storybook/blocks": "^7.6.0",
+    "@storybook/react": "^7.6.0",
+    "@storybook/react-vite": "^7.6.0",
+    "@storybook/test": "^7.6.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "storybook": "^7.6.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0"
   }
 }

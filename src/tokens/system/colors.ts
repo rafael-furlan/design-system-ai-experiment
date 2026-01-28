@@ -90,7 +90,7 @@ export const systemColors = {
     default: globalColors.neutral[300],
     muted: globalColors.neutral[200],
     strong: globalColors.neutral[400],
-    focus: globalColors.primary[600],
+    focus: '#3b82f6', // Vibrant blue for focus states (2px outline)
   },
 } as const;
 
